@@ -70,9 +70,9 @@ from torch.optim import Adam
 # Define the loss function with Classification Cross-Entropy loss and an optimizer with Adam optimizer
 loss_fn = nn.CrossEntropyLoss()
 optimizer = Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
-train_data = datasets.ImageFolder('/home/arjuna/Documents/Delameta/Train', transform=transforms)
+train_data = datasets.ImageFolder('/home/arjuna/Documents/Delameta/Train', transform=transform)
 train_loader = DataLoader(train_data, batch_size=64, shuffle=True)
-test_data = datasets.ImageFolder('/home/arjuna/Documents/Delameta/Test', transform=transforms)
+test_data = datasets.ImageFolder('/home/arjuna/Documents/Delameta/Test', transform=transform)
 test_loader = DataLoader(test_data, batch_size=64, shuffle=True)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
